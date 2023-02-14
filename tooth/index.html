@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="assets/lib/js/jquery-ui-1.11.4/jquery-ui.min.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
+
+        <script src="assets/js/data.js" type="text/javascript"></script>
+
+        <script src="assets/lib/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+
+        <script
+            src="assets/lib/js/jquery-ui-1.11.4/jquery-ui.min.js"
+            type="text/javascript"></script>
+
+        <script src="assets/lib/js/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+
+        <script src="assets/js/dragdrop.js" type="text/javascript"></script>
+    </head>
+
+    <body
+        onorientationchange="testOrientation();"
+        onload="testOrientation();"
+        id="appin">
+        <div id="block_land">Turn your device in landscape mode.</div>
+
+        <style>
+            #block_land {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                text-align: center;
+                background: white;
+                width: 100%;
+                height: 100%;
+                display: none;
+                font-weight: bold;
+            }
+        </style>
+        <script>
+            function testOrientation() {
+                document
+                    .getElementById('block_land')
+                    .style
+                    .display = (screen.width > screen.height)
+                        ? 'none'
+                        : 'block';
+                document
+                    .getElementById('first')
+                    .style
+                    .display = (screen.width > screen.height)
+                        ? 'block'
+                        : 'none';
+            }
+        </script>
+        <!-- The video -->
+        <style>
+            /* Style the video: 100% width and height to cover the entire window */
+            .myVideo {
+                position: fixed;
+                right: 0;
+                top: 0;
+                width: -webkit-fill-available;
+                min-width: 100%;
+                min-height: 100%;
+            }
+
+            #main img {
+                position: fixed;
+                right: 0;
+                top: 0;
+                width: -webkit-fill-available;
+                width: 100%;
+                height: 100%;
+            }
+
+            #right {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                width: -webkit-fill-available;
+                min-width: 100%;
+                min-height: 100%;
+            }
+
+            #worng {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                width: -webkit-fill-available;
+                min-width: 100%;
+                min-height: 100%;
+            }
+
+            .d-none {
+                display: none;
+            }
+
+            .d-block {
+                display: block !important;
+            }
+
+            /* Add some content at the bottom of the video/page */
+            .content {
+                position: fixed;
+                top: 0;
+                height: 100%;
+                right: 0;
+                /* background: rgb(73 76 50 / 23%); */
+                color: #f1f1f1;
+                width: 100%;
+                padding: 20px;
+            }
+
+            /* Style the button used to pause/play the video */
+            #myBtn {
+                width: 200px;
+                font-size: 18px;
+                padding: 10px;
+                border: none;
+                background: #000;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            #myBtn:hover {
+                background: #ddd;
+                color: black;
+            }
+        </style>
+
+        <div class="main" id="first">
+            <div id="first" class="myVideo d-block">
+                <img src="assets/img/First Screen@4x.png" alt="Image Not Found" style="width: 100%; height: 100vh;"/>
+            </div>
+        </div>
+
+        <div class="last" id="last">
+            <div id="last" class="myVideo d-none">
+                <img
+                    src="assets/img/Welldone@4x.png"
+                    alt="Image Not Found"
+                    style="width: 100%; height: 100vh;"/>
+            </div>
+        </div>
+
+        <div class="main d-none" id="main">
+            <div id="first" class="myVideo d-block">
+                <img src="assets/img/Tooth Screen@4x (1).png" alt="Image not found" />
+
+                <div class="btns">
+                    <a href="index.html" style="width: 100%; height: 100px;"></a>
+                </div>
+            </div>
+
+            <section class="content">
+
+                <div class="body-container" id="devilz-content">
+                    <div class="question-n" id="screen-activity">
+                        <div class="" id="container-items-box"></div>
+                        <div class="sub-header" style="display:none;">
+                            <h4 id="q-title" class="title-h4">Answer Key</h4>
+                        </div>
+
+                        <div class="question-section" style="padding-top: 75px;">
+
+                            <div class="section-hdivider">
+
+                                <div class="stage">
+                                    <div class="border-box">
+                                        <div id="container-box">
+                                            <ol></ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="wrapper" id="devilzApp" hidden="hidden">
+            <div class="container">
+                <div class="progress">
+                    <div id="patch">
+                        <span class="activity">Activity</span>
+                        <span id='current_screen'></span>/
+                        <span id='total_screen'></span>
+                    </div>
+                    <img class="bone" src="assets/img/bone.png">
+                    <div class="dog_container">
+                        <img class="dog" src="assets/img/dog.gif">
+                    </div>
+                </div>
+
+                <!-- <header class="header"> <img class="head" src="assets/img/header.png"> <h3
+                class="title-h3" id="app-instruction"></h3> </header> -->
+
+                <!-- <section class="content"> <div class="body-container" id="devilz-content">
+                <div class="question-n" id="screen-activity"> <div class=""
+                id="container-items-box"></div> <div class="sub-header" style="display:none;">
+                <h4 id="q-title" class="title-h4">Answer Key</h4> </div> <div
+                class="question-section"> <div class="section-hdivider"> <div class="stage">
+                <div class="border-box"> <div id="container-box"> <ol> </ol> </div> </div>
+                </div> </div> </div> </div> <footer class="footer"> <div class="button-wrapper"
+                id="btn-wrapper-holder"> </div> </footer> </div> </section> -->
+                <div id="feedbackDiv" class="hidden">
+                    <div id="right-image">
+                        <img id="iFace" src="assets/img/Smile-Face.png" class="">
+                        <img id="hands" src="assets/img/hands-Up.png" class="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <script> var elem = document.getElementById("appin"); function
+        openFullscreen() { if (elem.requestFullscreen) { elem.requestFullscreen(); }
+        else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen(); } else if (elem.msRequestFullscreen) { /* IE11
+        */ elem.msRequestFullscreen(); } } </script> -->
+
+        <audio
+            autoplay="autoplay"
+            controls="controls"
+            loop="loop"
+            id="music"
+            style="display: none"
+            src="assets/audio/mixkit-playground-fun-12 (1).mp3">
+            <source src="assets/audio/mixkit-playground-fun-12 (1).mp3" type="audio/ogg">
+            <source src="assets/audio/mixkit-playground-fun-12 (1).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <script>
+            document.addEventListener('click', function () {
+                document
+                    .getElementById('music')
+                    .play()
+            }, {once: true});
+            var vid = document.getElementById("music");
+            vid.volume = 0.50;
+
+            var elem = document.getElementById("appin");
+            function openFullscreen() {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.webkitRequestFullscreen) {/* Safari */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) {/* IE11 */
+                    elem.msRequestFullscreen();
+                }
+            }
+
+            $('#first').click(function () {
+                $('#first').addClass('d-none');
+                $('#main').removeClass('d-none');
+            });
+        </script>
+
+    </body>
+
+</html>
