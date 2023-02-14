@@ -1,0 +1,177 @@
+.play-button{
+    border: solid red 0.5rem;
+    padding: 0.5rem 3rem;
+    border-radius: 2rem;
+    background-color: yellow;
+    font-size: 2rem;
+    color: red;
+    font-weight: bold;
+    transform: translateX(-50%);
+    box-shadow: 0.25rem 0.25rem 0.25rem yellow;
+    transition: 0.5s;
+}
+
+.play-button:hover{
+    color: yellow;
+    border: solid yellow 0.5rem;
+    background-color: red;
+    box-shadow: 0 0 0;
+}
+
+#unscrambled p{
+    border: solid green 2px;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+}
+
+#unscrambled p:hover{
+    cursor: all-scroll;
+}
+
+#option-box div{
+    width: 7rem;
+    height: 4rem;
+    /* border: solid red 2px; */
+}
+
+#option-box #drop6_1{
+    top: 83%;
+    left: 4%;
+}
+
+#option-box #drop6_2{
+    top: 53%;
+    left: 20%;
+}
+
+#option-box #drop6_3{
+    top: 86%;
+    left: 36%;
+}
+
+#option-box #drop6_4{
+    top: 73%;
+    left: 55%;
+}
+
+#option-box #drop6_5{
+    top: 52%;
+    left: 72%;
+}
+
+#option-box #drop6_6{
+    top: 77%;
+    left: 88%;
+}
+
+#option-box #drop5_1{
+    top: 83%;
+    left: 4%;
+}
+
+#option-box #drop5_2{
+    top: 53%;
+    left: 24%;
+}
+
+#option-box #drop5_3{
+    top: 86%;
+    left: 44%;
+}
+
+#option-box #drop5_4{
+    top: 54%;
+    left: 64%;
+}
+
+#option-box #drop5_5{
+    top: 66%;
+    left: 85%;
+}
+
+#answer-box{
+    border: solid green 0.5rem;
+    border-radius: 1rem;
+    z-index: 999;
+    display: none;
+}
+
+
+@media screen and (max-width: 1095px) and (orientation: landscape) {
+    #main{
+        width: 100% !important;
+    } 
+    video{
+        -webkit-transform: scaleX(1.25); 
+        overflow: hidden;
+    }
+    #main-screen, #entry-screen, #welldone-screen{
+        overflow: hidden;
+    }
+    .start-50 {
+        left: 50%!important;
+    }
+    #option-box div{
+    width: 7rem;
+    height: 4rem;
+    /* border: solid red 2px; */
+}
+
+#option-box #drop6_1{
+    top: 78%;
+    left: 1%;
+}
+
+#option-box #drop6_2{
+    top: 48%;
+    left: 17%;
+}
+
+#option-box #drop6_3{
+    top: 79%;
+    left: 33%;
+}
+
+#option-box #drop6_4{
+    top: 67%;
+    left: 52%;
+}
+
+#option-box #drop6_5{
+    top: 46%;
+    left: 68%;
+}
+
+#option-box #drop6_6{
+    top: 71%;
+    left: 85%;
+}
+
+#option-box #drop5_1{
+    top: 83%;
+    left: 4%;
+}
+
+#option-box #drop5_2{
+    top: 53%;
+    left: 24%;
+}
+
+#option-box #drop5_3{
+    top: 86%;
+    left: 44%;
+}
+
+#option-box #drop5_4{
+    top: 54%;
+    left: 64%;
+}
+
+#option-box #drop5_5{
+    top: 66%;
+    left: 85%;
+}
+    
+}
